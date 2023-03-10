@@ -5,6 +5,7 @@ const title = document.getElementById("title");
 const author = document.getElementById("author");
 const pages = document.getElementById("pages");
 const read = document.getElementById("read");
+const submit = document.getElementById("submit-btn");
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -27,15 +28,36 @@ function addBookToLibrary() {
   myLibrary.push(book1);
 }
 function printBooks(myLibrary) {
+  root.innerHTML = "";
   for (book of myLibrary) {
     console.log(book);
-    const h1 = document.createElement("h1");
+    const div = document.createElement("div");
+    div.className = "book";
     const title = document.createTextNode(book.title);
-    h1.appendChild(title);
-    root.appendChild(h1);
+    div.innerHTML = `
+    <h3>
+      ${book.title}
+    </h3>
+    <h5>${book.author}</h5>
+    <p>${book.pages}</p>
+    <p>${book.read}</p>
+    `;
+    // h1.appendChild(title);
+    root.appendChild(div);
   }
 }
 
 function showForm() {
   form.style.display = "block";
 }
+
+submit.onclick = () => {
+  event.preventDefault();
+  let titleVal = title.value;
+  let authorVal = author.value;
+  let pagesVal = pages.value;
+  let readVal = read.checked;
+  let book = new Book(titleVal, authorVal, pagesVal, readVal);
+  myLibrary.push(book);
+  printBooks(myLibrary);
+};

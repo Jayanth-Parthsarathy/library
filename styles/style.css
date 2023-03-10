@@ -1,0 +1,12 @@
+.book{
+    width: 250px;
+    height: 250px;
+    background-color: black;
+    color: white;
+
+}
+
+#root{
+    display: flex;
+    justify-content: space-around;
+}
