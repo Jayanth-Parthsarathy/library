@@ -42,7 +42,7 @@ function printBooks(myLibrary) {
     <h5>Author: ${myLibrary[i].author}</h5>
     <p>No. of pages: ${myLibrary[i].pages}</p>
     <p>Read</p>
-    <button id="read-btn" onclick=MakeRead(${i})>Already read</button>
+    <button id="read-btn" onclick=MakeRead(${i})>Not read yet?</button>
     <button id="delete-btn" onclick=Remove(${i})>Remove</button>
     `;
     } else {
@@ -53,8 +53,8 @@ function printBooks(myLibrary) {
     <h5>Author: ${myLibrary[i].author}</h5>
     <p>No. of pages: ${myLibrary[i].pages}</p>
     <p>Not yet read</p>
-    <button onclick=MakeRead(${i})>Already read</button>
-    <button onclick=Remove(${i})>Remove</button>
+    <button onclick=MakeRead(${i})>Already read?</button>
+    <button id="delete-btn" onclick=Remove(${i})>Remove</button>
     `;
     }
 

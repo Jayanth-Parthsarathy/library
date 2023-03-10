@@ -1,6 +1,10 @@
 *{
     font-family: 'Poppins', sans-serif;
 }
+
+#delete-btn{
+  background-color: red;
+} 
 body{
   background-color: #222831;
   color: white;
@@ -117,7 +121,3 @@ form button{
 }
 
 
-
-#delete-btn{
-  background-color: red;
-}
